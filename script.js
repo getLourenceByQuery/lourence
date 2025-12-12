@@ -91,9 +91,8 @@ $(document).ready(function() {
 
    // 2. Listen for the form submit event
    document.getElementById('contactForm').addEventListener('submit', function(event) {
-       event.preventDefault(); // This stops the page from refreshing when you click send
+       event.preventDefault();
 
-       // Get the button to change its text while sending
        const btn = $('#submitbtn');
        const originalText = btn.innerText;
        btn.innerText = 'Sending...';
