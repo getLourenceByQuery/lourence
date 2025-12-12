@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lourence.</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" ></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">lourence.</div>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="scroll-container">
+
+        <section id="home" class="section">
+            <div class="content">
+                <h1 class="fade-in">プログラマー</h1>
+                <p class="subtitle fade-in">Lourence. Vega. Lorejas.</p>
+                <a href="#projects" class="btn-vintage">View My Work</a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="split-layout">
+                    <div class="about-carousel-container">
+                        <div class="slides-wrapper">
+                            <img src="profile.png" class="about-slide active" alt="Profile 1">
+                        </div>
+                    </div>
+
+                    <div id="text-area">
+                        <p id="bioText">
+                            Lourence (born c. 2005) is a Filipino student and emerging figure in the field of information technology. 
+                            As of 2025, he is 20 years old and currently pursuing a Bachelor of Science in Information Technology (BSIT) 
+                            degree. His studies focus on core areas such as software development, network systems, and data management. 
+                            Known for an aptitude in algorithmic problem-solving and an interest in applying technology to real-world 
+                            challenges, Lourence is preparing to enter the technology sector, with aspirations toward specialized roles 
+                            in either cybersecurity or full-stack development.
+                            <i>From Wikipedia, the free encyclopedia</i>  
+                        </p>
+                        
+                        <div class="education-box">
+                            <div class="edu-icon">🎓</div>
+                            <div class="edu-details">
+                                <span class="edu-label">College</span>
+                                <h3 class="edu-school">Colegio de Montalban</h3>
+                                <span class="edu-year">Bachelor of Science in Information Technology</span>
+                            </div>
+                        </div>
+                        <div class="education-box">
+                            <div class="edu-icon">🎓</div>
+                            <div class="edu-details">
+                                <span class="edu-label">Senior High School</span>
+                                <h3 class="edu-school">Asian Institute of Computer Studies</h3>
+                                <span class="edu-year">Class of 2024 (with Honor)</span>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="section">
+            <div class="content full-width">
+                <h2>Skills & Certifications</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">CSS</div>
+                    <div class="skill-item">JAVASCRIPT</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">Php</div>
+                </div>
+
+                <div class="carousel-wrapper">
+                    <h3 class="small-header">Certificates</h3>
+                    <div class="carousel-track">
+                        <div class="cert-card"><img src="8.jpg" alt=""></div>
+                        <div class="cert-card"><img src="9.png" alt=""></div>
+                        <div class="cert-card"><img src="8.jpg" alt=""></div>
+                        <div class="cert-card"><img src="9.png" alt=""></div>
+                        <div class="cert-card"><img src="8.jpg" alt=""></div>
+                        <div class="cert-card"><img src="9.png" alt=""></div>
+                        <div class="cert-card"><img src="8.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="content full-width">
+                <h2>Selected Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Recycle Crafting Menu</h3>
+                        <p>Built in Python that guides users through various crafting instructions.</p>
+                        <a href="https://github.com/getLourenceByQuery/Recycle-Crafting-Menu-CLI">View Case</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Brain Blitz</h3>
+                        <p>Simple memory game with timer.</p>
+                        <a href="https://getlourencebyquery.github.io/Brain-Blitz/">View Case</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Quiztonicz</h3>
+                        <p>Built with jquery javascript library, A dynamic quiz game.</p>
+                        <a href="https://getlourencebyquery.github.io/Quiztonicz/">View Case</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="content">
+                <h2>Get In Touch</h2>
+                <p>Available for freelance opportunities and collaborations.</p>
+                
+                <div class="socials">
+                    <a href="www.linkedin.com/in/lourencelorejas">LinkedIn</a>
+                    <a href="https://github.com/getLourenceByQuery">GitHub</a>
+                </div>
+
+                <div class="form-container">
+                    <form class="vintage-form" id="contactForm">
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" name="user_email" id="user_email" placeholder="name@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" name="subject" id="subject" placeholder="Subject of your message">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+                        </div>
+
+                    <div id="status-popup"></div>
+
+                    <button type="submit" class="btn-vintage form-btn" id="submitbtn">Send Message</button>
+
+                    </form>
+                </div>
+
+
+                
+
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
