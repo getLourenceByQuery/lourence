@@ -70,7 +70,7 @@ $(document).ready(function() {
 
 (function(){
       emailjs.init({
-        publicKey: "16rjR_4TNCb1zCox4", // REPLACE THIS with your actual Public Key
+        publicKey: "16rjR_4TNCb1zCox4", 
       });
    })();
 
@@ -80,7 +80,7 @@ $(document).ready(function() {
        // Set the text
        popup.innerText = message;
        
-       // Reset classes (remove old success/error) then add the new ones
+       
        popup.className = "show " + type;
 
        // After 3 seconds, hide the popup
