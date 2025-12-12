@@ -68,6 +68,48 @@ $(document).ready(function() {
 
 });
 
-$("#sind").click(function() {
-    alert("Note: This contact form is currently non-functional.");
-});
+(function(){
+      emailjs.init({
+        publicKey: "16rjR_4TNCb1zCox4", 
+      });
+   })();
+
+   function showPopup(message, type) {
+       var popup = document.getElementById("status-popup");
+       
+       // Set the text
+       popup.innerText = message;
+       
+       
+       popup.className = "show " + type;
+
+
+       setTimeout(function(){ 
+           popup.className = popup.className.replace("show", ""); 
+       }, 5000);
+   }
+
+   // 2. Listen for the form submit event
+   document.getElementById('contactForm').addEventListener('submit', function(event) {
+       event.preventDefault();
+
+       const btn = $('#submitbtn');
+       const originalText = btn.innerText;
+       btn.innerText = 'Sending...';
+
+       // 3. Send the form data
+       // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with actual values from Step 1
+       emailjs.sendForm('service_froiwsf', 'template_zr5kv9h', this)
+           .then(() => {
+               // Success!
+               btn.innerText = 'Sent!';
+               showPopup('Message sent successfully!', 'success');
+               document.getElementById('contactForm').reset(); // Clear the form
+               setTimeout(() => btn.innerText = originalText, 3000); // Reset button text
+           }, (error) => {
+               // Error!
+               btn.innerText = originalText;
+                showPopup('Failed to send message. Please try again.', 'error');
+               console.log('FAILED...', error);
+           });
+   });
