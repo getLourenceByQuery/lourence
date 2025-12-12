@@ -1,14 +1,10 @@
 $(document).ready(function() {
-    
-    /* --- MOBILE MENU LOGIC --- */
     $(".hamburger").click(function() {
-        // Toggle the 'active' class on the links (shows/hides them)
         $(".nav-links").toggleClass("active");
     });
 
-    // Close the menu when a link is clicked
     $(".nav-links a").on('click', function(event) {
-        $(".nav-links").removeClass("active"); // Hide menu
+        $(".nav-links").removeClass("active");
         
         if (this.hash !== "") {
             event.preventDefault();
@@ -24,7 +20,6 @@ $(document).ready(function() {
         }
     });
 
-    /* --- CAROUSEL LOGIC --- */
     $('.dot').click(function() {
         var slideIndex = $(this).data('slide');
         
@@ -46,7 +41,6 @@ $(document).ready(function() {
         $('.dot').eq(currentSlide).click();
     }, 4000);
 
-    /* --- ENTRANCE ANIMATION --- */
     const sections = document.querySelectorAll('.section');
 
     const observer = new IntersectionObserver(entries => {
@@ -77,7 +71,6 @@ $(document).ready(function() {
    function showPopup(message, type) {
        var popup = document.getElementById("status-popup");
        
-       // Set the text
        popup.innerText = message;
        
        
@@ -89,7 +82,6 @@ $(document).ready(function() {
        }, 5000);
    }
 
-   // 2. Listen for the form submit event
    document.getElementById('contactForm').addEventListener('submit', function(event) {
        event.preventDefault();
 
@@ -97,19 +89,16 @@ $(document).ready(function() {
        const originalText = btn.innerText;
        btn.innerText = 'Sending...';
 
-       // 3. Send the form data
-       // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with actual values from Step 1
        emailjs.sendForm('service_froiwsf', 'template_zr5kv9h', this)
            .then(() => {
-               // Success!
                btn.innerText = 'Sent!';
                showPopup('Message sent successfully!', 'success');
-               document.getElementById('contactForm').reset(); // Clear the form
-               setTimeout(() => btn.innerText = originalText, 3000); // Reset button text
+               document.getElementById('contactForm').reset();
+               setTimeout(() => btn.innerText = originalText, 3000); 
            }, (error) => {
-               // Error!
                btn.innerText = originalText;
                 showPopup('Failed to send message. Please try again.', 'error');
                console.log('FAILED...', error);
            });
    });
+
