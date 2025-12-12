@@ -471,6 +471,44 @@ h2 {
     color: var(--bg-color);
 }
 
+#status-popup {
+    visibility: hidden; 
+    min-width: 250px; 
+    background-color: #333333ff; /* Dark grey background */
+    color: #fff;
+    text-align: center;
+    border-radius: 5px; /* Rounded corners */
+    padding: 16px;
+    position: fixed; /* Stays in place even if you scroll */
+    z-index: 1000; /* Sit on top of everything */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30px; /* Distance from top */
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.5s, top 0.5s; /* Smooth fade effect */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: relative;
+    bottom: -13%;
+}
+
+/* Class to make it visible */
+#status-popup.show {
+    visibility: visible;
+    opacity: 1;
+    top: 50px; /* Slide down slightly when showing */
+}
+
+/* Success color (Green) */
+#status-popup.success {
+    background-color: #a4ff83ff; 
+}
+
+/* Error color (Red) */
+#status-popup.error {
+    background-color: #ff0000ff; 
+}
+
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 768px) {
     
@@ -564,3 +602,4 @@ h2 {
         height: auto;
     }
 }
+
